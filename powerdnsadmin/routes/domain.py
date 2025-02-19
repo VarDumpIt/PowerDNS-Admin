@@ -401,7 +401,7 @@ def add():
                     record_data = []
                     for template_record in template_records:
                         record_row = {
-                            'record_data': template_record.data,
+                            'record_data': template_record.data.replace('{domain_name}', domain_name),
                             'record_name': template_record.name,
                             'record_status': 'Active' if template_record.status else 'Disabled',
                             'record_ttl': template_record.ttl,
